@@ -20,6 +20,11 @@
     "Description": {
       "type": "richtext",
       "required": false
+    },
+    "FeaturedImage": {
+      "type": "component",
+      "component": "image.image",
+      "repeatable": false
     }
   },
   "config": {}

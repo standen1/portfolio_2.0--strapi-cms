@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_title_and_text_page_infos",
+  "info": {
+    "displayName": "PageInfo",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "PageTitle": {
+      "type": "string",
+      "required": true
+    },
+    "PageExcerpt": {
+      "type": "text",
+      "required": true
+    },
+    "FeaturedImage": {
+      "type": "component",
+      "component": "image.image",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

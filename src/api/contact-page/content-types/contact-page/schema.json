@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "about_pages",
+  "collectionName": "contact_pages",
   "info": {
-    "singularName": "about-page",
-    "pluralName": "about-pages",
-    "displayName": "AboutPage"
+    "singularName": "contact-page",
+    "pluralName": "contact-pages",
+    "displayName": "ContactPage"
   },
   "options": {
     "draftAndPublish": true
@@ -14,23 +14,17 @@
     "PageInfo": {
       "type": "component",
       "component": "title-and-text.page-info",
-      "repeatable": false,
-      "required": true
-    },
-    "ProfileImage": {
-      "type": "component",
-      "component": "image.image",
       "repeatable": false
     },
-    "PageData": {
+    "PageContent": {
       "type": "component",
       "component": "title-and-text.category",
-      "repeatable": false
+      "repeatable": true
     },
-    "SocialMediaSection": {
+    "SocialMedia": {
       "type": "component",
       "component": "social-media.social-link",
-      "repeatable": false
+      "repeatable": true
     }
   }
 }

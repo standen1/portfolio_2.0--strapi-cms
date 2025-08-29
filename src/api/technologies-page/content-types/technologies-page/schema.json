@@ -4,7 +4,7 @@
   "info": {
     "singularName": "technologies-page",
     "pluralName": "technologies-pages",
-    "displayName": "TechnologiesPage"
+    "displayName": "Technologies"
   },
   "options": {
     "draftAndPublish": true

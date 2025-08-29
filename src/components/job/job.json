@@ -1,20 +1,11 @@
 {
-  "kind": "collectionType",
-  "collectionName": "jobs",
+  "collectionName": "components_job_jobs",
   "info": {
-    "singularName": "job",
-    "pluralName": "jobs",
-    "displayName": "Job"
+    "displayName": "Job",
+    "icon": "gate"
   },
-  "options": {
-    "draftAndPublish": true
-  },
-  "pluginOptions": {},
+  "options": {},
   "attributes": {
-    "JobID": {
-      "type": "uid",
-      "required": true
-    },
     "CompanyName": {
       "type": "string",
       "required": true
@@ -37,11 +28,11 @@
       "type": "date",
       "conditions": {
         "visible": {
-          "==": [
+          "!=": [
             {
               "var": "StillEmployed"
             },
-            false
+            true
           ]
         }
       }
@@ -53,15 +44,16 @@
       "type": "richtext",
       "required": true
     },
-    "Projects": {
+    "Project": {
       "type": "component",
       "component": "project.project",
       "repeatable": true
     },
-    "Image": {
+    "FeaturedImage": {
       "type": "component",
       "component": "image.image",
-      "repeatable": true
+      "repeatable": false
     }
-  }
+  },
+  "config": {}
 }

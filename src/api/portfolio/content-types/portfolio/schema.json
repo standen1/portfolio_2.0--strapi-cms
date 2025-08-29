@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "portfolios",
+  "info": {
+    "singularName": "portfolio",
+    "pluralName": "portfolios",
+    "displayName": "Portfolio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Project": {
+      "type": "component",
+      "component": "project.project",
+      "repeatable": true,
+      "required": false
+    }
+  }
+}

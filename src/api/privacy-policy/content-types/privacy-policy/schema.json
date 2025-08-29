@@ -11,6 +11,12 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "PageInfo": {
+      "type": "component",
+      "component": "title-and-text.page-info",
+      "repeatable": false,
+      "required": true
+    },
     "PrivacyPolicyPageContent": {
       "type": "component",
       "component": "title-and-text.category",

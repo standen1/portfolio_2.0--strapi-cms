@@ -4,7 +4,7 @@
   "info": {
     "singularName": "skills-page",
     "pluralName": "skills-pages",
-    "displayName": "SkillsPage"
+    "displayName": "Skills"
   },
   "options": {
     "draftAndPublish": true

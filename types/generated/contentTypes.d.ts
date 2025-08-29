@@ -539,6 +539,37 @@ export interface ApiJobJob extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPageInfoPageInfo extends Struct.CollectionTypeSchema {
+  collectionName: 'page_infos';
+  info: {
+    displayName: 'PageInfo';
+    pluralName: 'page-infos';
+    singularName: 'page-info';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Excerpt: Schema.Attribute.Text;
+    FeaturedImage: Schema.Attribute.Component<'image.image', false> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::page-info.page-info'
+    > &
+      Schema.Attribute.Private;
+    PageTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPrivacyPolicyPrivacyPolicy extends Struct.SingleTypeSchema {
   collectionName: 'privacy_policies';
   info: {
@@ -1171,6 +1202,7 @@ declare module '@strapi/strapi' {
       'api::credits-page.credits-page': ApiCreditsPageCreditsPage;
       'api::freelance-link.freelance-link': ApiFreelanceLinkFreelanceLink;
       'api::job.job': ApiJobJob;
+      'api::page-info.page-info': ApiPageInfoPageInfo;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::project.project': ApiProjectProject;
       'api::skills-page.skills-page': ApiSkillsPageSkillsPage;

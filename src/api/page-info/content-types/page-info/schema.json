@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "page_infos",
+  "info": {
+    "singularName": "page-info",
+    "pluralName": "page-infos",
+    "displayName": "PageInfo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "PageTitle": {
+      "type": "string",
+      "required": true
+    },
+    "Excerpt": {
+      "type": "text"
+    },
+    "FeaturedImage": {
+      "type": "component",
+      "component": "image.image",
+      "repeatable": false,
+      "required": true
+    }
+  }
+}

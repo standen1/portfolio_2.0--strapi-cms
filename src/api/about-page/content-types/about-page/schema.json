@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_pages",
+  "info": {
+    "singularName": "about-page",
+    "pluralName": "about-pages",
+    "displayName": "AboutPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ProfileImage": {
+      "type": "component",
+      "component": "image.image",
+      "repeatable": false
+    },
+    "PageData": {
+      "type": "component",
+      "component": "title-and-text.category",
+      "repeatable": false
+    },
+    "SocialMediaSection": {
+      "type": "component",
+      "component": "social-media.social-link",
+      "repeatable": false
+    }
+  }
+}

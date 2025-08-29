@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jobs",
+  "info": {
+    "singularName": "job",
+    "pluralName": "jobs",
+    "displayName": "Job"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "JobID": {
+      "type": "uid",
+      "required": true
+    },
+    "CompanyName": {
+      "type": "string",
+      "required": true
+    },
+    "JobTitle": {
+      "type": "string",
+      "required": true
+    },
+    "StartDate": {
+      "type": "date",
+      "required": true
+    },
+    "StillEmployed": {
+      "type": "boolean",
+      "private": true,
+      "required": true,
+      "default": false
+    },
+    "EndDate": {
+      "type": "date",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "StillEmployed"
+            },
+            false
+          ]
+        }
+      }
+    },
+    "WebsiteURL": {
+      "type": "string"
+    },
+    "Responsibilities": {
+      "type": "richtext",
+      "required": true
+    },
+    "Projects": {
+      "type": "component",
+      "component": "project.project",
+      "repeatable": true
+    },
+    "Image": {
+      "type": "component",
+      "component": "image.image",
+      "repeatable": true
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "technologies_pages",
+  "info": {
+    "singularName": "technologies-page",
+    "pluralName": "technologies-pages",
+    "displayName": "TechnologiesPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Category": {
+      "type": "component",
+      "component": "title-and-text.category",
+      "repeatable": true
+    }
+  }
+}

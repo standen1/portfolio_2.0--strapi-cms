@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_title_and_text_categories",
+  "info": {
+    "displayName": "Category",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Content": {
+      "type": "richtext",
+      "required": true
+    }
+  },
+  "config": {}
+}

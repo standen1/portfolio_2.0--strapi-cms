@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "credits_pages",
+  "info": {
+    "singularName": "credits-page",
+    "pluralName": "credits-pages",
+    "displayName": "CreditsPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "PageTitle": {
+      "type": "string"
+    },
+    "Category": {
+      "type": "component",
+      "component": "title-and-text.category",
+      "repeatable": true
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_social_media_social_links",
+  "info": {
+    "displayName": "SocialLink",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "LinkURL": {
+      "type": "string"
+    },
+    "Icon": {
+      "type": "component",
+      "component": "image.image",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

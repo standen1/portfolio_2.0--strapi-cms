@@ -410,6 +410,253 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
+  collectionName: 'about_pages';
+  info: {
+    displayName: 'AboutPage';
+    pluralName: 'about-pages';
+    singularName: 'about-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::about-page.about-page'
+    > &
+      Schema.Attribute.Private;
+    PageData: Schema.Attribute.Component<'title-and-text.category', false>;
+    ProfileImage: Schema.Attribute.Component<'image.image', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    SocialMediaSection: Schema.Attribute.Component<
+      'social-media.social-link',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCreditsPageCreditsPage extends Struct.SingleTypeSchema {
+  collectionName: 'credits_pages';
+  info: {
+    displayName: 'CreditsPage';
+    pluralName: 'credits-pages';
+    singularName: 'credits-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Category: Schema.Attribute.Component<'title-and-text.category', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::credits-page.credits-page'
+    > &
+      Schema.Attribute.Private;
+    PageTitle: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFreelanceLinkFreelanceLink extends Struct.SingleTypeSchema {
+  collectionName: 'freelance_links';
+  info: {
+    displayName: 'FreelanceLink';
+    pluralName: 'freelance-links';
+    singularName: 'freelance-link';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    CalloutText: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    LinkText: Schema.Attribute.String & Schema.Attribute.Required;
+    LinkURL: Schema.Attribute.String & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::freelance-link.freelance-link'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiJobJob extends Struct.CollectionTypeSchema {
+  collectionName: 'jobs';
+  info: {
+    displayName: 'Job';
+    pluralName: 'jobs';
+    singularName: 'job';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    CompanyName: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    EndDate: Schema.Attribute.Date;
+    Image: Schema.Attribute.Component<'image.image', true>;
+    JobID: Schema.Attribute.UID & Schema.Attribute.Required;
+    JobTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::job.job'> &
+      Schema.Attribute.Private;
+    Projects: Schema.Attribute.Component<'project.project', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    Responsibilities: Schema.Attribute.RichText & Schema.Attribute.Required;
+    StartDate: Schema.Attribute.Date & Schema.Attribute.Required;
+    StillEmployed: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private &
+      Schema.Attribute.DefaultTo<false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    WebsiteURL: Schema.Attribute.String;
+  };
+}
+
+export interface ApiPrivacyPolicyPrivacyPolicy extends Struct.SingleTypeSchema {
+  collectionName: 'privacy_policies';
+  info: {
+    displayName: 'PrivacyPolicy';
+    pluralName: 'privacy-policies';
+    singularName: 'privacy-policy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::privacy-policy.privacy-policy'
+    > &
+      Schema.Attribute.Private;
+    PrivacyPolicyPageContent: Schema.Attribute.Component<
+      'title-and-text.category',
+      false
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProjectProject extends Struct.CollectionTypeSchema {
+  collectionName: 'projects';
+  info: {
+    displayName: 'Project';
+    pluralName: 'projects';
+    singularName: 'project';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::project.project'
+    > &
+      Schema.Attribute.Private;
+    ProjectData: Schema.Attribute.Component<'project.project', true>;
+    ProjectID: Schema.Attribute.UID;
+    ProjectThumbnail: Schema.Attribute.Component<'image.image', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSkillsPageSkillsPage extends Struct.SingleTypeSchema {
+  collectionName: 'skills_pages';
+  info: {
+    displayName: 'SkillsPage';
+    pluralName: 'skills-pages';
+    singularName: 'skills-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Category: Schema.Attribute.Component<'title-and-text.category', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::skills-page.skills-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTechnologiesPageTechnologiesPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'technologies_pages';
+  info: {
+    displayName: 'TechnologiesPage';
+    pluralName: 'technologies-pages';
+    singularName: 'technologies-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Category: Schema.Attribute.Component<'title-and-text.category', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::technologies-page.technologies-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -920,6 +1167,14 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::about-page.about-page': ApiAboutPageAboutPage;
+      'api::credits-page.credits-page': ApiCreditsPageCreditsPage;
+      'api::freelance-link.freelance-link': ApiFreelanceLinkFreelanceLink;
+      'api::job.job': ApiJobJob;
+      'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
+      'api::project.project': ApiProjectProject;
+      'api::skills-page.skills-page': ApiSkillsPageSkillsPage;
+      'api::technologies-page.technologies-page': ApiTechnologiesPageTechnologiesPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

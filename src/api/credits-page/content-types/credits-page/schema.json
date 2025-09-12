@@ -24,6 +24,11 @@
       "type": "component",
       "component": "title-and-text.category",
       "repeatable": true
+    },
+    "FeaturedImage": {
+      "type": "component",
+      "component": "image.image",
+      "repeatable": false
     }
   }
 }

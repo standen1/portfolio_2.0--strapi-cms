@@ -13,12 +13,6 @@
     "PageExcerpt": {
       "type": "text",
       "required": true
-    },
-    "FeaturedImage": {
-      "type": "component",
-      "component": "image.image",
-      "repeatable": false,
-      "required": true
     }
   },
   "config": {}

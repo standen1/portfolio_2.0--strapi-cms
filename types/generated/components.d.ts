@@ -84,8 +84,6 @@ export interface TitleAndTextPageInfo extends Struct.ComponentSchema {
     icon: 'bulletList';
   };
   attributes: {
-    FeaturedImage: Schema.Attribute.Component<'image.image', false> &
-      Schema.Attribute.Required;
     PageExcerpt: Schema.Attribute.Text & Schema.Attribute.Required;
     PageTitle: Schema.Attribute.String & Schema.Attribute.Required;
   };

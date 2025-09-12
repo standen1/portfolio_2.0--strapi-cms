@@ -10,5 +10,21 @@
     "draftAndPublish": true
   },
   "pluginOptions": {},
-  "attributes": {}
+  "attributes": {
+    "PageInfo": {
+      "type": "component",
+      "component": "title-and-text.page-info",
+      "repeatable": false
+    },
+    "Job": {
+      "type": "component",
+      "component": "job.job",
+      "repeatable": true
+    },
+    "FeaturedImage": {
+      "type": "component",
+      "component": "image.image",
+      "repeatable": false
+    }
+  }
 }

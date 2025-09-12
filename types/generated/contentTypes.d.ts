@@ -435,10 +435,6 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Required;
     ProfileImage: Schema.Attribute.Component<'image.image', false>;
     publishedAt: Schema.Attribute.DateTime;
-    SocialMediaSection: Schema.Attribute.Component<
-      'social-media.social-link',
-      false
-    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -468,7 +464,6 @@ export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
     PageContent: Schema.Attribute.Component<'title-and-text.category', true>;
     PageInfo: Schema.Attribute.Component<'title-and-text.page-info', false>;
     publishedAt: Schema.Attribute.DateTime;
-    SocialMedia: Schema.Attribute.Component<'social-media.social-link', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -499,36 +494,6 @@ export interface ApiCreditsPageCreditsPage extends Struct.SingleTypeSchema {
     PageInfo: Schema.Attribute.Component<'title-and-text.page-info', false> &
       Schema.Attribute.Required;
     PageTitle: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiFreelanceLinkFreelanceLink extends Struct.SingleTypeSchema {
-  collectionName: 'freelance_links';
-  info: {
-    displayName: 'FreelanceLink';
-    pluralName: 'freelance-links';
-    singularName: 'freelance-link';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    CalloutText: Schema.Attribute.String;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    LinkText: Schema.Attribute.String & Schema.Attribute.Required;
-    LinkURL: Schema.Attribute.String & Schema.Attribute.Required;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::freelance-link.freelance-link'
-    > &
-      Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -673,35 +638,6 @@ export interface ApiSkillsPageSkillsPage extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::skills-page.skills-page'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiTechnologiesPageTechnologiesPage
-  extends Struct.SingleTypeSchema {
-  collectionName: 'technologies_pages';
-  info: {
-    displayName: 'Technologies';
-    pluralName: 'technologies-pages';
-    singularName: 'technologies-page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Category: Schema.Attribute.Component<'title-and-text.category', true>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::technologies-page.technologies-page'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
@@ -1224,13 +1160,11 @@ declare module '@strapi/strapi' {
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::contact-page.contact-page': ApiContactPageContactPage;
       'api::credits-page.credits-page': ApiCreditsPageCreditsPage;
-      'api::freelance-link.freelance-link': ApiFreelanceLinkFreelanceLink;
       'api::portfolio.portfolio': ApiPortfolioPortfolio;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::project.project': ApiProjectProject;
       'api::resume-page.resume-page': ApiResumePageResumePage;
       'api::skills-page.skills-page': ApiSkillsPageSkillsPage;
-      'api::technologies-page.technologies-page': ApiTechnologiesPageTechnologiesPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

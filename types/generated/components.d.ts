@@ -11,6 +11,7 @@ export interface ImageImage extends Struct.ComponentSchema {
     Height: Schema.Attribute.Integer & Schema.Attribute.Required;
     Image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.Required;
+    ImageURL: Schema.Attribute.String & Schema.Attribute.Required;
     Width: Schema.Attribute.Integer & Schema.Attribute.Required;
   };
 }

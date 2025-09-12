@@ -20,11 +20,6 @@
       "type": "component",
       "component": "title-and-text.category",
       "repeatable": true
-    },
-    "SocialMedia": {
-      "type": "component",
-      "component": "social-media.social-link",
-      "repeatable": true
     }
   }
 }

@@ -26,11 +26,6 @@
       "type": "component",
       "component": "title-and-text.category",
       "repeatable": false
-    },
-    "SocialMediaSection": {
-      "type": "component",
-      "component": "social-media.social-link",
-      "repeatable": false
     }
   }
 }

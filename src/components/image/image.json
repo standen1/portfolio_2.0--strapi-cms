@@ -28,6 +28,10 @@
     "Height": {
       "type": "integer",
       "required": true
+    },
+    "ImageURL": {
+      "type": "string",
+      "required": true
     }
   },
   "config": {}

@@ -18,11 +18,6 @@
       "type": "component",
       "component": "image.image",
       "repeatable": true
-    },
-    "ProjectData": {
-      "type": "component",
-      "component": "project.project",
-      "repeatable": true
     }
   }
 }

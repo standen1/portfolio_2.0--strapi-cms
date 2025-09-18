@@ -43,16 +43,6 @@
     "Responsibilities": {
       "type": "richtext",
       "required": true
-    },
-    "Project": {
-      "type": "component",
-      "component": "project.project",
-      "repeatable": true
-    },
-    "FeaturedImage": {
-      "type": "component",
-      "component": "image.image",
-      "repeatable": false
     }
   },
   "config": {}

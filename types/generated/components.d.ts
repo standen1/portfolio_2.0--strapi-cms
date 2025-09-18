@@ -25,9 +25,7 @@ export interface JobJob extends Struct.ComponentSchema {
   attributes: {
     CompanyName: Schema.Attribute.String & Schema.Attribute.Required;
     EndDate: Schema.Attribute.Date;
-    FeaturedImage: Schema.Attribute.Component<'image.image', false>;
     JobTitle: Schema.Attribute.String & Schema.Attribute.Required;
-    Project: Schema.Attribute.Component<'project.project', true>;
     Responsibilities: Schema.Attribute.RichText & Schema.Attribute.Required;
     StartDate: Schema.Attribute.Date & Schema.Attribute.Required;
     StillEmployed: Schema.Attribute.Boolean &
@@ -38,6 +36,19 @@ export interface JobJob extends Struct.ComponentSchema {
   };
 }
 
+export interface ProjectPortfolioProject extends Struct.ComponentSchema {
+  collectionName: 'components_project_portfolio_projects';
+  info: {
+    displayName: 'PortfolioProject';
+  };
+  attributes: {
+    ProjectInfo: Schema.Attribute.Component<'project.project', false> &
+      Schema.Attribute.Required;
+    ThumbnailImage: Schema.Attribute.Component<'image.image', false> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface ProjectProject extends Struct.ComponentSchema {
   collectionName: 'components_project_projects';
   info: {
@@ -45,10 +56,8 @@ export interface ProjectProject extends Struct.ComponentSchema {
     icon: 'code';
   };
   attributes: {
-    Description: Schema.Attribute.RichText;
-    FeaturedImage: Schema.Attribute.Component<'image.image', false>;
-    Name: Schema.Attribute.String & Schema.Attribute.Required;
-    Technologies: Schema.Attribute.RichText & Schema.Attribute.Required;
+    Description: Schema.Attribute.RichText & Schema.Attribute.Required;
+    ProjectName: Schema.Attribute.String & Schema.Attribute.Required;
     WebsiteURL: Schema.Attribute.String;
   };
 }
@@ -94,6 +103,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'image.image': ImageImage;
       'job.job': JobJob;
+      'project.portfolio-project': ProjectPortfolioProject;
       'project.project': ProjectProject;
       'social-media.social-link': SocialMediaSocialLink;
       'title-and-text.category': TitleAndTextCategory;

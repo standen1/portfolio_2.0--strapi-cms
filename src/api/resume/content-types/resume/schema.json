@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "portfolios",
+  "collectionName": "resumes",
   "info": {
-    "singularName": "portfolio",
-    "pluralName": "portfolios",
-    "displayName": "Portfolio"
+    "singularName": "resume",
+    "pluralName": "resumes",
+    "displayName": "Resume"
   },
   "options": {
     "draftAndPublish": true
@@ -22,6 +22,11 @@
       "component": "image.image",
       "repeatable": false,
       "required": true
+    },
+    "Project": {
+      "type": "component",
+      "component": "project.project",
+      "repeatable": true
     }
   }
 }

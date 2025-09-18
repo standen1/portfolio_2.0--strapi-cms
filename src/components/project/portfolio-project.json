@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_project_portfolio_projects",
+  "info": {
+    "displayName": "PortfolioProject"
+  },
+  "options": {},
+  "attributes": {
+    "ThumbnailImage": {
+      "type": "component",
+      "component": "image.image",
+      "repeatable": false,
+      "required": true
+    },
+    "ProjectInfo": {
+      "type": "component",
+      "component": "project.project",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

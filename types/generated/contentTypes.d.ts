@@ -518,13 +518,16 @@ export interface ApiPortfolioPortfolio extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    FeaturedImage: Schema.Attribute.Component<'image.image', false> &
+      Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::portfolio.portfolio'
     > &
       Schema.Attribute.Private;
-    Project: Schema.Attribute.Component<'project.project', true>;
+    PageInfo: Schema.Attribute.Component<'title-and-text.page-info', false> &
+      Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -586,7 +589,6 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
       'api::project.project'
     > &
       Schema.Attribute.Private;
-    ProjectData: Schema.Attribute.Component<'project.project', true>;
     ProjectID: Schema.Attribute.UID;
     ProjectThumbnail: Schema.Attribute.Component<'image.image', true>;
     publishedAt: Schema.Attribute.DateTime;
@@ -596,12 +598,12 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiResumePageResumePage extends Struct.SingleTypeSchema {
-  collectionName: 'resume_pages';
+export interface ApiResumeResume extends Struct.SingleTypeSchema {
+  collectionName: 'resumes';
   info: {
-    displayName: 'ResumePage';
-    pluralName: 'resume-pages';
-    singularName: 'resume-page';
+    displayName: 'Resume';
+    pluralName: 'resumes';
+    singularName: 'resume';
   };
   options: {
     draftAndPublish: true;
@@ -610,15 +612,17 @@ export interface ApiResumePageResumePage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    FeaturedImage: Schema.Attribute.Component<'image.image', false>;
-    Job: Schema.Attribute.Component<'job.job', true>;
+    FeaturedImage: Schema.Attribute.Component<'image.image', false> &
+      Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::resume-page.resume-page'
+      'api::resume.resume'
     > &
       Schema.Attribute.Private;
-    PageInfo: Schema.Attribute.Component<'title-and-text.page-info', false>;
+    PageInfo: Schema.Attribute.Component<'title-and-text.page-info', false> &
+      Schema.Attribute.Required;
+    Project: Schema.Attribute.Component<'project.project', true>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1170,7 +1174,7 @@ declare module '@strapi/strapi' {
       'api::portfolio.portfolio': ApiPortfolioPortfolio;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
       'api::project.project': ApiProjectProject;
-      'api::resume-page.resume-page': ApiResumePageResumePage;
+      'api::resume.resume': ApiResumeResume;
       'api::skills-page.skills-page': ApiSkillsPageSkillsPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

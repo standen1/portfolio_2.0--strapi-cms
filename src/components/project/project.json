@@ -6,25 +6,16 @@
   },
   "options": {},
   "attributes": {
-    "Name": {
+    "ProjectName": {
       "type": "string",
       "required": true
     },
     "WebsiteURL": {
       "type": "string"
     },
-    "Technologies": {
-      "type": "richtext",
-      "required": true
-    },
     "Description": {
       "type": "richtext",
-      "required": false
-    },
-    "FeaturedImage": {
-      "type": "component",
-      "component": "image.image",
-      "repeatable": false
+      "required": true
     }
   },
   "config": {}

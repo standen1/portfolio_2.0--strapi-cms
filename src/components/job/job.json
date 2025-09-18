@@ -43,6 +43,11 @@
     "Responsibilities": {
       "type": "richtext",
       "required": true
+    },
+    "Project": {
+      "type": "component",
+      "component": "project.project",
+      "repeatable": true
     }
   },
   "config": {}

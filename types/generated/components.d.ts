@@ -26,6 +26,7 @@ export interface JobJob extends Struct.ComponentSchema {
     CompanyName: Schema.Attribute.String & Schema.Attribute.Required;
     EndDate: Schema.Attribute.Date;
     JobTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    Project: Schema.Attribute.Component<'project.project', true>;
     Responsibilities: Schema.Attribute.RichText & Schema.Attribute.Required;
     StartDate: Schema.Attribute.Date & Schema.Attribute.Required;
     StillEmployed: Schema.Attribute.Boolean &

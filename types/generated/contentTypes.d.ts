@@ -615,6 +615,7 @@ export interface ApiResumeResume extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     FeaturedImage: Schema.Attribute.Component<'image.image', false> &
       Schema.Attribute.Required;
+    Job: Schema.Attribute.Component<'job.job', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -623,7 +624,6 @@ export interface ApiResumeResume extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     PageInfo: Schema.Attribute.Component<'title-and-text.page-info', false> &
       Schema.Attribute.Required;
-    Project: Schema.Attribute.Component<'project.project', true>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

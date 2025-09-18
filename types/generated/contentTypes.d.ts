@@ -465,6 +465,7 @@ export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     PageContent: Schema.Attribute.Component<'title-and-text.category', true>;
     PageInfo: Schema.Attribute.Component<'title-and-text.page-info', false>;
+    ProfileImage: Schema.Attribute.Component<'image.image', false>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

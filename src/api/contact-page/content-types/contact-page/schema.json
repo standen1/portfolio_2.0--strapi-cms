@@ -25,6 +25,11 @@
       "type": "component",
       "component": "image.image",
       "repeatable": false
+    },
+    "ProfileImage": {
+      "type": "component",
+      "component": "image.image",
+      "repeatable": false
     }
   }
 }

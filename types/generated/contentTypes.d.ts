@@ -570,35 +570,6 @@ export interface ApiPrivacyPolicyPrivacyPolicy extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiProjectProject extends Struct.CollectionTypeSchema {
-  collectionName: 'projects';
-  info: {
-    displayName: 'Project';
-    pluralName: 'projects';
-    singularName: 'project';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::project.project'
-    > &
-      Schema.Attribute.Private;
-    ProjectID: Schema.Attribute.UID;
-    ProjectThumbnail: Schema.Attribute.Component<'image.image', true>;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiResumeResume extends Struct.SingleTypeSchema {
   collectionName: 'resumes';
   info: {
@@ -613,9 +584,9 @@ export interface ApiResumeResume extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Employer: Schema.Attribute.Component<'employement.employment', true>;
     FeaturedImage: Schema.Attribute.Component<'image.image', false> &
       Schema.Attribute.Required;
-    Job: Schema.Attribute.Component<'job.job', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1174,7 +1145,6 @@ declare module '@strapi/strapi' {
       'api::credits-page.credits-page': ApiCreditsPageCreditsPage;
       'api::portfolio.portfolio': ApiPortfolioPortfolio;
       'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
-      'api::project.project': ApiProjectProject;
       'api::resume.resume': ApiResumeResume;
       'api::skills-page.skills-page': ApiSkillsPageSkillsPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;

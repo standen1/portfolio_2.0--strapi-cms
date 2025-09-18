@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_title_and_text_job_responsibilities",
+  "info": {
+    "displayName": "JobResponsibility"
+  },
+  "options": {},
+  "attributes": {
+    "ResponsibilityTitle": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "richtext",
+      "required": true
+    }
+  },
+  "config": {}
+}

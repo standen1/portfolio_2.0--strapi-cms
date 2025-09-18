@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_employement_employments",
+  "info": {
+    "displayName": "Employment",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "CompanyName": {
+      "type": "string",
+      "required": true
+    },
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "StartDate": {
+      "type": "string",
+      "required": true
+    },
+    "CurrentlyEmployed": {
+      "type": "boolean",
+      "required": true
+    },
+    "EndDate": {
+      "type": "string"
+    },
+    "EmployerWebsite": {
+      "type": "string"
+    },
+    "JobResponsibility": {
+      "type": "component",
+      "component": "title-and-text.job-responsibility",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

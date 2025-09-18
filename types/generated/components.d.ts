@@ -1,5 +1,25 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface EmployementEmployment extends Struct.ComponentSchema {
+  collectionName: 'components_employement_employments';
+  info: {
+    displayName: 'Employment';
+    icon: 'bulletList';
+  };
+  attributes: {
+    CompanyName: Schema.Attribute.String & Schema.Attribute.Required;
+    CurrentlyEmployed: Schema.Attribute.Boolean & Schema.Attribute.Required;
+    EmployerWebsite: Schema.Attribute.String;
+    EndDate: Schema.Attribute.String;
+    JobResponsibility: Schema.Attribute.Component<
+      'title-and-text.job-responsibility',
+      true
+    >;
+    StartDate: Schema.Attribute.String & Schema.Attribute.Required;
+    Title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ImageImage extends Struct.ComponentSchema {
   collectionName: 'components_image_images';
   info: {
@@ -13,27 +33,6 @@ export interface ImageImage extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     ImageURL: Schema.Attribute.String & Schema.Attribute.Required;
     Width: Schema.Attribute.Integer & Schema.Attribute.Required;
-  };
-}
-
-export interface JobJob extends Struct.ComponentSchema {
-  collectionName: 'components_job_jobs';
-  info: {
-    displayName: 'Job';
-    icon: 'gate';
-  };
-  attributes: {
-    CompanyName: Schema.Attribute.String & Schema.Attribute.Required;
-    EndDate: Schema.Attribute.Date;
-    JobTitle: Schema.Attribute.String & Schema.Attribute.Required;
-    Project: Schema.Attribute.Component<'project.project', true>;
-    Responsibilities: Schema.Attribute.RichText & Schema.Attribute.Required;
-    StartDate: Schema.Attribute.Date & Schema.Attribute.Required;
-    StillEmployed: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.Private &
-      Schema.Attribute.DefaultTo<false>;
-    WebsiteURL: Schema.Attribute.String;
   };
 }
 
@@ -87,6 +86,17 @@ export interface TitleAndTextCategory extends Struct.ComponentSchema {
   };
 }
 
+export interface TitleAndTextJobResponsibility extends Struct.ComponentSchema {
+  collectionName: 'components_title_and_text_job_responsibilities';
+  info: {
+    displayName: 'JobResponsibility';
+  };
+  attributes: {
+    Description: Schema.Attribute.RichText & Schema.Attribute.Required;
+    ResponsibilityTitle: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface TitleAndTextPageInfo extends Struct.ComponentSchema {
   collectionName: 'components_title_and_text_page_infos';
   info: {
@@ -102,12 +112,13 @@ export interface TitleAndTextPageInfo extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'employement.employment': EmployementEmployment;
       'image.image': ImageImage;
-      'job.job': JobJob;
       'project.portfolio-project': ProjectPortfolioProject;
       'project.project': ProjectProject;
       'social-media.social-link': SocialMediaSocialLink;
       'title-and-text.category': TitleAndTextCategory;
+      'title-and-text.job-responsibility': TitleAndTextJobResponsibility;
       'title-and-text.page-info': TitleAndTextPageInfo;
     }
   }

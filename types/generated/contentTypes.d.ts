@@ -529,6 +529,7 @@ export interface ApiPortfolioPortfolio extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     PageInfo: Schema.Attribute.Component<'title-and-text.page-info', false> &
       Schema.Attribute.Required;
+    Project: Schema.Attribute.Component<'project.portfolio-project', true>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

@@ -22,6 +22,11 @@
       "component": "image.image",
       "repeatable": false,
       "required": true
+    },
+    "Project": {
+      "type": "component",
+      "component": "project.portfolio-project",
+      "repeatable": true
     }
   }
 }

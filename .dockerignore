@@ -1,0 +1,8 @@
+node_modules
+build
+dist
+.strapi
+.git
+.env
+.env.*
+npm-debug.log*

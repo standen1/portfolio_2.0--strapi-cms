@@ -1,8 +1,13 @@
-export default [
+export default ({ env }) => [
   'strapi::logger',
   'strapi::errors',
   'strapi::security',
-  'strapi::cors',
+  {
+    name: 'strapi::cors',
+    config: {
+      origin: env.array('CORS_ORIGINS', ['https://seanstanden.dev']),
+    },
+  },
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
